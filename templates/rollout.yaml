@@ -17,7 +17,7 @@ spec:
     canary:
       canaryService: quote-canary
       stableService: quote
-      {{- with .Values.ambassador.rollouts.traficMappings }}
+      {{- with .Values.ambassador.rollouts.trafficMappings }}
       trafficRouting:
         ambassador:
           mappings:
