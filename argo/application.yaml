@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: quote-rollout-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: quote-rollout
+    repoURL: github.com/cakuros/quote-rollout
+    targetRevision: 0.1.0
+    helm:
+      releaseName: quote-rollout
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default

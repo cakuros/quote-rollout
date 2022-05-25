@@ -7,7 +7,7 @@ metadata:
     a8r.io/repository: github.com/a8r-se/quote-rollout
     a8r.io/rollouts.scm.branch: main
     a8r.io/rollouts.image-repo.type: dockerhub
-    a8r.io/rollouts.image-repo.name: "datawire/quote:0.5.0"
+    a8r.io/rollouts.image-repo.name: "datawire/quote"
     a8r.io/rollouts.deployment: quote
     a8r.io/rollouts.mappings: "quote-backend"
 spec:
@@ -26,7 +26,7 @@ metadata:
     a8r.io/repository: github.com/a8r-se/quote-rollout
     a8r.io/rollouts.scm.branch: main
     a8r.io/rollouts.image-repo.type: dockerhub
-    a8r.io/rollouts.image-repo.name: "datawire/quote:0.5.0"
+    a8r.io/rollouts.image-repo.name: "datawire/quote"
     a8r.io/rollouts.deployment: quote
     a8r.io/rollouts.mappings: "quote-backend"
 spec:
