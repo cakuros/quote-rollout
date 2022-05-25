@@ -4,6 +4,6 @@ metadata:
   name: quote-backend
   namespace: default
 spec:
-  host: ta.ckurosawa.k736.net
+  hostname: ta.ckurosawa.k736.net
   prefix: /backend/
   service: quote.default:80
