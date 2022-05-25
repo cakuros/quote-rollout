@@ -1,0 +1,5 @@
+k8s_config:
+- manifest_path: /
+  cluster_info:
+    cluster_id: 14621fb2-35f4-5ba3-b7ae-349e4664007c
+    cluster_name: Casey Kurosawa's cluster
