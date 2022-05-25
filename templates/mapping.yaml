@@ -1,0 +1,9 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: quote-backend
+  namespace: default
+spec:
+  host: ta.ckurosawa.k736.net
+  prefix: /backend/
+  service: quote.default:80
