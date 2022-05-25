@@ -1,16 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: quote-rollout-app
+  creationTimestamp: "2022-05-25T17:13:26Z"
+  generation: 24
+  name: quote-rollout
   namespace: argocd
+  resourceVersion: "127868"
+  selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/quote-rollout
+  uid: 634fc75a-e87c-48a0-85fd-9b907b533172
 spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
   project: default
   source:
-    chart: quote-rollout
-    repoURL: github.com/cakuros/quote-rollout
-    targetRevision: 0.1.0
     helm:
-      releaseName: quote-rollout
-  destination:
-    server: "https://kubernetes.default.svc"
-    namespace: default
+      valueFiles:
+      - values.yaml
+    path: .
+    repoURL: git@github.com:cakuros/quote-rollout
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
