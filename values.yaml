@@ -19,3 +19,5 @@ ambassador:
     image:
       repository: docker.io/datawire/quote
       image: "0.5.0"
+
+imagePullPolicy: "Always"
