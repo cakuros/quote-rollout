@@ -1,0 +1,39 @@
+ambassador:
+  rollouts:
+    annotations:
+      getambassador.io/rolloutId: a665b5ce-581a-4512-922b-4b1d7af65881
+    image:
+      repository: docker.io/datawire/quote
+      tag: 0.4.1
+    replicas: 2
+    steps:
+    - setWeight: 10
+    - pause:
+        duration: 12
+    - setWeight: 20
+    - pause:
+        duration: 12
+    - setWeight: 30
+    - pause:
+        duration: 12
+    - setWeight: 40
+    - pause:
+        duration: 12
+    - setWeight: 50
+    - pause:
+        duration: 12
+    - setWeight: 60
+    - pause:
+        duration: 12
+    - setWeight: 70
+    - pause:
+        duration: 12
+    - setWeight: 80
+    - pause:
+        duration: 12
+    - setWeight: 90
+    - pause:
+        duration: 12
+    - setWeight: 100
+    - pause:
+        duration: 12
