@@ -1,0 +1,21 @@
+# Default values for quote-rollout.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+ambassador:
+  rollouts:
+    annotations:
+      test: value
+    replicas: 1
+    trafficMappings:
+      - quote-backend
+    steps:
+      - setWeight: 30   # 30% of the traffic will go to the canary for 30 seconds
+      - pause: {duration: 30}
+      - setWeight: 60   # 60% of the traffic will go to the canary for 45 seconds   
+      - pause: {duration: 45}
+      - setWeight: 100  # 100% of the traffic will go to the canary for 10 seconds 
+      - pause: {duration: 10}
+    image:
+      repository: docker.io/datawire/quote
+      image: "0.5.0"

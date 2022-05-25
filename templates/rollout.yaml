@@ -1,0 +1,44 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: quote
+  {{- with .Values.ambassador.rollouts.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  replicas: {{ .Values.ambassador.rollouts.replicas }}
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      app: quote
+  strategy:
+    canary:
+      canaryService: quote-canary
+      stableService: quote
+      {{- with .Values.ambassador.rollouts.traficMappings }}
+      trafficRouting:
+        ambassador:
+          mappings:
+          {{- toYaml . | nindent 10 }}
+      {{- end}}
+      {{- with .Values.ambassador.rollouts.steps }}
+      steps:
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+  template:
+    metadata:
+      labels:
+        app: quote
+    spec:
+      containers:
+      - name: quote
+        image: "{{ .Values.ambassador.rollouts.image.repository }}:{{ .Values.ambassador.rollouts.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.imagePullPolicy }}
+        ports:
+          - name: http
+            containerPort: 8080
+        env:
+          - name: PORT
+            value: 8080
