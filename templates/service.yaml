@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: quote
   annotations: 
-    a8r.io/repository: github.com/a8r-se/quote-rollout
+    a8r.io/repository: https://github.com/a8r-se/quote-rollout
     a8r.io/rollouts.scm.branch: main
     a8r.io/rollouts.scm.path: "/"
     a8r.io/rollouts.scm.type: "github"
