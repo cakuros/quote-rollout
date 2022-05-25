@@ -2,10 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+imagePullPolicy: "Always"
 ambassador:
   rollouts:
-    annotations:
-      test: value
+    annotations: {}
     replicas: 1
     trafficMappings:
       - quote-backend
@@ -19,5 +19,3 @@ ambassador:
     image:
       repository: docker.io/datawire/quote
       image: "0.5.0"
-
-imagePullPolicy: "Always"
