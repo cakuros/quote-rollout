@@ -1,0 +1,10 @@
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Host
+metadata:
+  name: ta-ckurosawa-k736-net
+  namespace: default
+spec:
+  acmeProvider:
+    email: caseykurosawa@datawire.io
+  hostname: "ta.ckurosawa.k736.net"
