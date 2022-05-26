@@ -2,10 +2,10 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   creationTimestamp: "2022-05-25T17:13:26Z"
-  generation: 24
+  generation: 248
   name: quote-rollout
   namespace: argocd
-  resourceVersion: "127868"
+  resourceVersion: "160349"
   selfLink: /apis/argoproj.io/v1alpha1/namespaces/argocd/applications/quote-rollout
   uid: 634fc75a-e87c-48a0-85fd-9b907b533172
 spec:
@@ -17,7 +17,8 @@ spec:
     helm:
       valueFiles:
       - values.yaml
-    path: .
+      - a8r-values-default.yaml
+    path: charts/quote
     repoURL: git@github.com:cakuros/quote-rollout
     targetRevision: HEAD
   syncPolicy:
