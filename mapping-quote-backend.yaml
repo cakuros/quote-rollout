@@ -1,0 +1,14 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: quote-backend
+  namespace: default
+  labels:
+    argocd.argoproj.io/instance: quote-rollout
+  annotations: {}
+spec:
+  ambassador_id:
+  - default
+  hostname: ta.ckurosawa.k736.net
+  prefix: /backend2/
+  service: quote.default:80
